@@ -15,5 +15,5 @@ ingresos_agrupados = calcular_ingresos(ventas_escenarios)
 #Visualización de resultados
 
 visualizar_escenario_unico(ingresos_agrupados)
-visualizar_histograma_ventas(ventas_escenarios, 3, 34)
-visualizar_distribucion_unidades(ventas_escenarios, 3, 34)
+visualizar_histograma_ventas(ventas_escenarios, periodo_inicial, periodo_inicial)
+visualizar_distribucion_unidades(ventas_escenarios, periodo_inicial, periodo_inicial)
