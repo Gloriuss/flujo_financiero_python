@@ -3,9 +3,20 @@ import configuracion_escenarios as ce
 import ingresos_ventas as iv
 import visualizacion as vz
 
+
+Escenarios_Periodos = 100
+Alfa_Periodos_Optimista = 1.35
+Beta_Periodos_Optimista = 3.76
+Alfa_Periodos_Pesimista = 1.8
+Beta_Periodos_Pesimista = 1.12
+# Elegir el escenario intermedio o uno elegido
+escenario_unico = Escenarios_Periodos // 2 # Índice intermedio (redondeado hacia arriba)
+#escenario_unico = 0
+# Generar valores interpolados para Alfa y Beta
+Alfa_Periodos_escenarios = np.linspace(Alfa_Periodos_Optimista, Alfa_Periodos_Pesimista, Escenarios_Periodos)
+Beta_Periodos_escenarios = np.linspace(Beta_Periodos_Optimista, Beta_Periodos_Pesimista, Escenarios_Periodos)
 # Ejecutar las funciones de cada módulo
 catalogo_venta, inventario, total_unidades = pv.configurar_venta()
-Alfa_Periodos_escenarios, Beta_Periodos_escenarios = ce.configurar_escenarios()
 
 # Llamar a la función para graficar los escenarios
 ce.graficar_escenarios(Alfa_Periodos_escenarios, Beta_Periodos_escenarios)
