@@ -198,7 +198,7 @@ ingresos_agrupados_un_escenario
 dataframes = {'ventas_un_escenario' : ventas_un_escenario, 'ingresos_venta_un_escenario' : ingresos_venta_un_escenario, 'ingresos_agrupados_un_escenario' : ingresos_agrupados_un_escenario}
 
 # Crear o abrir un archivo Excel y agregar múltiples hojas
-with pd.ExcelWriter('flujo_financiero_excel.xlsx', engine='xlsxwriter') as writer:
+with pd.ExcelWriter('flujo_financiero_python/flujo_financiero_excel.xlsx', engine='xlsxwriter') as writer:
     for df_name, df in dataframes.items():
         df.to_excel(writer, sheet_name=df_name)
 ## Proyección de Costos
