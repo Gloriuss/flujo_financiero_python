@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def configurar_escenarios():
     Escenarios_Periodos = 100
@@ -12,3 +13,14 @@ def configurar_escenarios():
     Beta_Periodos_escenarios = np.linspace(Beta_Periodos_Optimista, Beta_Periodos_Pesimista, Escenarios_Periodos)
 
     return Alfa_Periodos_escenarios, Beta_Periodos_escenarios
+
+def graficar_escenarios(Alfa_Periodos_escenarios, Beta_Periodos_escenarios):
+    plt.figure(figsize=(10, 6))
+    plt.plot(Alfa_Periodos_escenarios, label='Alfa')
+    plt.plot(Beta_Periodos_escenarios, label='Beta')
+    plt.xlabel('Escenario')
+    plt.ylabel('Valores de Alfa y Beta')
+    plt.title('Interpolación de Alfa y Beta en los Escenarios')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
