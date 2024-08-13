@@ -2,6 +2,7 @@ import parametros_de_venta as pv
 import configuracion_escenarios as ce
 import ingresos_ventas as iv
 import visualizacion as vz
+import numpy as np
 
 
 Escenarios_Periodos = 100
